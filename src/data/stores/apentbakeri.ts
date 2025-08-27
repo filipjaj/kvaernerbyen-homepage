@@ -24,7 +24,7 @@
 import type { Store } from "./schema";
 
 export const apentbakeri: Store = {
-  name: "Apent bakeri Kværnerbyen",
+  name: "Åpent bakeri Kværnerbyen",
   openingHours: [
     { day: "Mandag", open: "07:30", close: "17:00", closed: false },
     { day: "Tirsdag", open: "07:30", close: "17:00", closed: false },
