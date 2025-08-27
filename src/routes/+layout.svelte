@@ -30,3 +30,4 @@ const queryClient = new QueryClient({
   {@render children?.()}
   <SvelteQueryDevtools />
 </QueryClientProvider>
+
