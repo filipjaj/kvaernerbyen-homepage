@@ -3,19 +3,25 @@
    * WeatherWidget
    * Displays current weather for given coordinates using /api/weather proxy to MET Locationforecast.
    * Props:
-   *  - lat: number (required)
-   *  - lon: number (required)
-   *  - altitude?: number
-   *  - placeName?: string (for labeling, e.g. "Kværnerbyen")
+   *  - lat?: number (defaults to site.location.lat)
+   *  - lon?: number (defaults to site.location.lon)
+   *  - altitude?: number (defaults to site.location.altitude if provided)
+   *  - placeName?: string (defaults to site.placeName)
    */
   import { createQuery } from '@tanstack/svelte-query';
   import { browser } from '$app/environment';
   import { Table, TableBody, TableRow, TableCell } from '$lib/components/ui/table';
   import { Cloud, CloudRain, CloudDrizzle, CloudSnow, CloudFog, Sun, CloudSun, Thermometer, Droplets, Wind, ArrowUp } from 'lucide-svelte';
+  import { site } from '$lib/config';
 
-  let { lat, lon, altitude, placeName = 'Kværnerbyen' } = $props<{
-    lat: number;
-    lon: number;
+  let {
+    lat = site.location.lat,
+    lon = site.location.lon,
+    altitude = (site.location.altitude ?? undefined),
+    placeName = site.placeName
+  } = $props<{
+    lat?: number;
+    lon?: number;
     altitude?: number;
     placeName?: string;
   }>();

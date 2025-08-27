@@ -16,12 +16,12 @@ import { site } from '$lib/config';
 
       <section>
         <h2 class="text-base font-semibold mb-2">Sparkesykkler</h2>
-        <ProviderCounts placeName={site.placeName} />
+        <ProviderCounts />
       </section>
 
      <section>
         <h2 class="text-base font-semibold mb-2">Vær</h2>
-        <WeatherWidget lat={site.location.lat} lon={site.location.lon} placeName={site.placeName} />
+        <WeatherWidget />
       </section>
 
       <section>

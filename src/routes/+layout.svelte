@@ -17,6 +17,12 @@ const queryClient = new QueryClient({
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+  <meta name="description" content="Kværnerbyen - Busser, sparkesykkler og vær" />
+  <meta name="keywords" content="Kværnerbyen, busser, sparkesykkler, vær" />
+  <meta name="author" content="Kværnerbyen" />
+  <meta name="robots" content="index, follow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kv.byen - din portal til kværnerbyen</title>
 </svelte:head>
 
 <Header />
