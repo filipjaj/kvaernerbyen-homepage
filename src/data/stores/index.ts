@@ -2,6 +2,7 @@ import { kiwi } from "./kiwi";
 import { extra } from "./extra";
 import { vitus } from "./vitus";
 import { apentbakeri } from "./apentbakeri";
+import { kraft } from "./kraft";
 import type { Store } from "./schema";
 
 const stores = {
@@ -9,6 +10,7 @@ const stores = {
   extra,
   vitus,
   apentbakeri,
+  kraft,
 } as const;
 
 const isValidStore = (store: string): store is keyof typeof stores => {
