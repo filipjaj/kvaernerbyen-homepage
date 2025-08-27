@@ -1,17 +1,12 @@
-//Kværnerbyen
-//NSR:StopPlace:6552
-
-// Kværner
-//NSR:StopPlace:6555
-
 import { gql, GraphQLClient } from "graphql-request";
+import type { RequestHandler } from "@sveltejs/kit";
+import { site } from "$lib/config";
 
 const baseUrl = "https://api.entur.io/journey-planner/v3/graphql";
-const ETClientName = "filipjohansen-kvaernerbyen";
 
 const client = new GraphQLClient(baseUrl, {
   headers: {
-    "ET-Client-Name": ETClientName,
+    "ET-Client-Name": site.entur.clientName,
   },
 });
 
@@ -86,19 +81,15 @@ const stopPlaceQuery = gql`
   }
 `;
 
-const stopPlaces = {
-  kvaernerbyen: "NSR:StopPlace:6552",
-  kvaerner: "NSR:StopPlace:6555",
-} as const;
 const queries = () => {
-  return Object.values(stopPlaces).map(async (stopPlace) => {
+  return Object.values(site.entur.stopPlaces).map(async (stopPlace) => {
     return client.request(stopPlaceQuery, {
       stopPlaceId: stopPlace,
       startTime: new Date().toISOString(),
     });
   });
 };
-export const GET = async () => {
+export const GET: RequestHandler = async () => {
   const data = await Promise.all(queries());
 
   return new Response(JSON.stringify(data));

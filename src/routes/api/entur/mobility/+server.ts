@@ -1,14 +1,20 @@
 import type { Vehicle } from "$lib/components/mobility/types";
 import { gql, GraphQLClient } from "graphql-request";
 import type { RequestHandler } from "@sveltejs/kit";
+import { site } from "$lib/config";
 
 const vehicleQuery = gql`
-  query GetVehicles {
+  query GetVehicles(
+    $minLon: Float!
+    $minLat: Float!
+    $maxLon: Float!
+    $maxLat: Float!
+  ) {
     vehicles(
-      minimumLongitude: 10.785531413861975
-      minimumLatitude: 59.90201124539607
-      maximumLongitude: 10.792392246737961
-      maximumLatitude: 59.905164954221334
+      minimumLongitude: $minLon
+      minimumLatitude: $minLat
+      maximumLongitude: $maxLon
+      maximumLatitude: $maxLat
     ) {
       lat
       lon
@@ -50,11 +56,10 @@ const vehicleQuery = gql`
 `;
 
 const baseUrl = "https://api.entur.io/mobility/v2/graphql";
-const ETClientName = "filipjohansen-kvaernerbyen";
 
 const client = new GraphQLClient(baseUrl, {
   headers: {
-    "ET-Client-Name": ETClientName,
+    "ET-Client-Name": site.entur.clientName,
   },
 });
 
@@ -74,7 +79,14 @@ const FriendlyNames = {
 };
 
 export const GET: RequestHandler = async ({ url }) => {
-  const data = (await client.request(vehicleQuery)) as { vehicles: Vehicle[] };
+  const { bounds } = site.mobility;
+  const variables = {
+    minLon: bounds.minLon,
+    minLat: bounds.minLat,
+    maxLon: bounds.maxLon,
+    maxLat: bounds.maxLat,
+  };
+  const data = (await client.request(vehicleQuery, variables)) as { vehicles: Vehicle[] };
 
   // Optional counts view: /api/entur/mobility?counts=true
   if (url.searchParams.get("counts") === "true") {
