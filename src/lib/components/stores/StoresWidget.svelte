@@ -58,8 +58,8 @@
   }
 </script>
 
-<section aria-labelledby="stores-title" class="w-full max-w-md">
-  <h2 id="stores-title" class="text-base font-semibold mb-2">{title}</h2>
+
+
   <Table>
     <TableHeader>
       <TableRow>
@@ -101,4 +101,4 @@
       {/each}
     </TableBody>
   </Table>
-</section>
+
