@@ -21,6 +21,9 @@ export type SiteConfig = {
       maxLon: number;
     };
   };
+  met: {
+    user_agent: string;
+  };
 };
 
 export const site: SiteConfig = {
@@ -40,6 +43,9 @@ export const site: SiteConfig = {
       kvaernerbyen: "NSR:StopPlace:6552",
       kvaerner: "NSR:StopPlace:6555",
     },
+  },
+  met: {
+    user_agent: "filipjohansen-kvaernerbyen",
   },
   mobility: {
     bounds: {
