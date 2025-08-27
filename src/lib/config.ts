@@ -9,6 +9,18 @@ export type SiteConfig = {
     altitude?: number | null;
   };
   placeName: string; // human-readable locality name
+  entur: {
+    clientName: string;
+    stopPlaces: Record<string, string>;
+  };
+  mobility: {
+    bounds: {
+      minLat: number;
+      minLon: number;
+      maxLat: number;
+      maxLon: number;
+    };
+  };
 };
 
 export const site: SiteConfig = {
@@ -22,4 +34,19 @@ export const site: SiteConfig = {
     altitude: null,
   },
   placeName: "Kværnerbyen",
+  entur: {
+    clientName: "filipjohansen-kvaernerbyen",
+    stopPlaces: {
+      kvaernerbyen: "NSR:StopPlace:6552",
+      kvaerner: "NSR:StopPlace:6555",
+    },
+  },
+  mobility: {
+    bounds: {
+      minLon: 10.785531413861975,
+      minLat: 59.90201124539607,
+      maxLon: 10.792392246737961,
+      maxLat: 59.905164954221334,
+    },
+  },
 };

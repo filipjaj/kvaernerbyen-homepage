@@ -9,8 +9,9 @@
   import { createQuery } from '@tanstack/svelte-query';
   import { browser } from '$app/environment';
   import { getBrandFor } from './brands';
+  import { site } from '$lib/config';
 
-  let { placeName = 'Kværnerbyen' } = $props<{ placeName?: string }>();
+  let { placeName = site.placeName } = $props<{ placeName?: string }>();
 
   type CountsMap = Record<string, number>;
 
