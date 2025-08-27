@@ -20,7 +20,7 @@ const stopPlaceQuery = gql`
     $stopPlaceId: String!
     $whitelistedTransportModes: [TransportMode]
     $whitelistedLines: [ID!]
-    $numberOfDepartures: Int = 20
+    $numberOfDepartures: Int = 3
     $startTime: DateTime
   ) {
     stopPlace(id: $stopPlaceId) {

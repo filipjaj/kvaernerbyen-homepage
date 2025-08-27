@@ -2,8 +2,17 @@
 	import '../app.css';
 	import Header from '../lib/components/Header.svelte';
 	import favicon from '$lib/assets/favicon.svg';
-	
+	import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
+  import { browser } from '$app/environment';
+	  import { SvelteQueryDevtools } from '@tanstack/svelte-query-devtools'
 	let { children } = $props();
+const queryClient = new QueryClient({
+    defaultOptions: {
+      queries: {
+        enabled: browser,
+      },
+    },
+  })
 </script>
 
 <svelte:head>
@@ -11,4 +20,7 @@
 </svelte:head>
 
 <Header />
-{@render children?.()}
+<QueryClientProvider client={queryClient}>
+  {@render children?.()}
+  <SvelteQueryDevtools />
+</QueryClientProvider>
