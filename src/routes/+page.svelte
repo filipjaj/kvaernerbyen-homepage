@@ -4,6 +4,7 @@ import ProviderCounts from '$lib/components/mobility/ProviderCounts.svelte';
 import WeatherWidget from '$lib/components/weather/WeatherWidget.svelte';
 import StoresWidget from '$lib/components/stores/StoresWidget.svelte';
 import { site } from '$lib/config';
+import BikeStation from '$lib/components/mobility/BikeStation.svelte';
 </script>
 
 <main class="font-switzer px-4 sm:px-6 md:px-8 py-6">
@@ -12,6 +13,11 @@ import { site } from '$lib/config';
       <section>
         <h2 class="text-base font-semibold mb-2">Busser</h2>
         <Departures />
+      </section>
+
+      <section>
+        <h2 class="text-base font-semibold mb-2">Bysykkel</h2>
+        <BikeStation />
       </section>
 
       <section>

@@ -14,6 +14,9 @@ export type SiteConfig = {
     stopPlaces: Record<string, string>;
   };
   mobility: {
+    bysykkel: {
+      id: string;
+    };
     bounds: {
       minLat: number;
       minLon: number;
@@ -48,6 +51,9 @@ export const site: SiteConfig = {
     user_agent: "filipjohansen-kvaernerbyen",
   },
   mobility: {
+    bysykkel: {
+      id: "YOS:Station:447",
+    },
     bounds: {
       minLon: 10.785531413861975,
       minLat: 59.90201124539607,
