@@ -2,6 +2,7 @@
   "name": "kvbyen",
   "account_id": "f8a860b3aa271b2856c72bc175816ab4",
   "main": ".svelte-kit/cloudflare/_worker.js",
+  "compatibility_flags": ["nodejs_compat"],
 
   "compatibility_date": "2025-01-01",
   "assets": {
