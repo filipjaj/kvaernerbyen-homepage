@@ -3,6 +3,7 @@
   import { Chat } from '@ai-sdk/svelte';
   import { lastAssistantMessageIsCompleteWithToolCalls } from 'ai';
   import ParkingCard from '$lib/components/ui/parking/Card.svelte';
+  import BestParking from '$lib/components/ui/parking/BestParking.svelte';
   import { site } from '$lib/config';
   import type { PageData } from './$types';
   import { page } from '$app/state';
@@ -56,6 +57,7 @@
   <section class="space-y-4">
     <h1 class="text-2xl font-semibold tracking-tight">Parkering i {site.placeName}</h1>
     <p class="text-muted-foreground">Utforsk aktive parkeringsplasser, priser og regler.</p>
+    <BestParking entries={entries} />
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {#each entries as e (e.id)}
         <ParkingCard entry={e} />
