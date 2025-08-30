@@ -21,6 +21,7 @@
   import TableCell from "$lib/components/ui/table/table-cell.svelte";
   import Input from "$lib/components/ui/input.svelte";
   import Label from "$lib/components/ui/label.svelte";
+  import Button from "$lib/components/ui/button.svelte";
 
   let { entries } = $props<{ entries: EntryWithSlug[] }>();
 
@@ -123,14 +124,9 @@
     <fieldset class="sm:col-span-2 lg:col-span-2">
       <legend class="block text-sm font-medium">Varighet</legend>
       <div class="flex items-center gap-6 mt-2">
-        <div class="inline-flex items-center gap-2 text-sm">
-          <input id="mode-duration" type="radio" name="mode" value="duration" bind:group={mode} />
-          <Label for="mode-duration">Timer</Label>
-        </div>
-        <div class="inline-flex items-center gap-2 text-sm">
-          <input id="mode-end" type="radio" name="mode" value="end" bind:group={mode} />
-          <Label for="mode-end">Sluttid</Label>
-        </div>
+        <Button variant="outline" size="sm" onclick={() => (mode = mode === 'duration' ? 'end' : 'duration')}>
+          {mode === 'duration' ? 'Bytt til sluttid' : 'Bytt til timer'}
+        </Button>
       </div>
       {#if mode === 'duration'}
         <div class="mt-2 max-w-xs">
@@ -150,7 +146,6 @@
     {#if error}
       <p class="text-red-700">{error}</p>
     {/if}
-   
   </div>
 
   {#if results.length}
