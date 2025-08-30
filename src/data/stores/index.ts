@@ -13,16 +13,8 @@ const stores = {
   kraft,
 } as const;
 
-const isValidStore = (store: string): store is keyof typeof stores => {
-  return Object.keys(stores).includes(store);
-};
-
-const getStore = (store: string): Store | null => {
-  if (!isValidStore(store)) {
-    return null;
-  }
-
-  return stores[store];
+const getStore = (store: string) => {
+  return Object.values(stores).find((s) => s.slug === store);
 };
 
 const getStores = (): Store[] => {

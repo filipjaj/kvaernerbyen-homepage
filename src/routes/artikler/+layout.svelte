@@ -31,6 +31,7 @@
   const title = $derived(frontmatter?.title ?? siteName);
   const description = $derived(frontmatter?.description ?? '');
   const ogImage = $derived(absoluteUrl(frontmatter?.image));
+  const isIndex = $derived(page.url.pathname.replace(/\/$/, '') === '/artikler');
 
   const jsonLd = $derived({
     '@context': 'https://schema.org',
@@ -59,24 +60,26 @@
 </script>
 
 <svelte:head>
-  {#if title}
-    <title>{title}</title>
-    <meta property="og:title" content={title} />
-    <meta name="twitter:title" content={title} />
-  {/if}
-  {#if description}
-    <meta name="description" content={description} />
-    <meta property="og:description" content={description} />
-    <meta name="twitter:description" content={description} />
-  {/if}
-  <link rel="canonical" href={canonical} />
-  <meta property="og:url" content={canonical} />
-  <meta property="og:type" content="article" />
-  <meta property="og:site_name" content={siteName} />
-  <meta name="twitter:card" content="summary_large_image" />
-  {#if ogImage}
-    <meta property="og:image" content={ogImage} />
-    <meta name="twitter:image" content={ogImage} />
+  {#if !isIndex}
+    {#if title}
+      <title>{title}</title>
+      <meta property="og:title" content={title} />
+      <meta name="twitter:title" content={title} />
+    {/if}
+    {#if description}
+      <meta name="description" content={description} />
+      <meta property="og:description" content={description} />
+      <meta name="twitter:description" content={description} />
+    {/if}
+    <link rel="canonical" href={canonical} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content={isIndex ? 'website' : 'article'} />
+    <meta property="og:site_name" content={siteName} />
+    <meta name="twitter:card" content="summary_large_image" />
+    {#if ogImage}
+      <meta property="og:image" content={ogImage} />
+      <meta name="twitter:image" content={ogImage} />
+    {/if}
   {/if}
 
   

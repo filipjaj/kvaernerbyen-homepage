@@ -2,6 +2,7 @@ import { z } from "zod";
 
 const storeSchema = z.object({
   name: z.string(),
+  slug: z.string(),
   openingHours: z.array(
     z.object({
       day: z.string(),

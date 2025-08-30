@@ -70,8 +70,10 @@
     <TableBody>
       {#each stores as s}
         {@const info = getOpenInfo(s, now)}
+       
         <TableRow>
           <TableCell>
+            <a href={`/butikker/${s.slug}`}>
             <div class="flex flex-col">
               <span class="font-medium">{s.name}</span>
               <span class="text-xs text-neutral-500 flex items-center gap-1 mt-0.5">
@@ -83,8 +85,10 @@
                 {/if}
               </span>
             </div>
+            </a>
           </TableCell>
           <TableCell class="text-right">
+             <a href={`/butikker/${s.slug}`}>  
             {#if info.openNow}
               <span class="inline-flex items-center gap-1 text-emerald-600 font-medium">
                 <CheckCircle class="h-4 w-4" aria-hidden="true" />
@@ -96,8 +100,10 @@
                 Stengt
               </span>
             {/if}
+            </a>
           </TableCell>
         </TableRow>
+       
       {/each}
     </TableBody>
   </Table>

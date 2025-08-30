@@ -37,8 +37,12 @@
         <ul class="my-6 ml-6 list-disc [&>li]:mt-2">
             <li>Adresse: {storeData.address.street}, {storeData.address.zip} {storeData.address.city}</li>
              <li>Telefon: {storeData.contact.phone}</li>
-            <li>E-post: {storeData.contact.email}</li>
-            <li>Nettsted: {storeData.contact.url}</li>
+             {#if storeData.contact.email}
+                <li>E-post: {storeData.contact.email}</li>
+             {/if}
+            {#if storeData.contact.url}
+                <li>Nettsted: {storeData.contact.url}</li>
+            {/if}
         </ul>
         </div>
     

@@ -18,6 +18,7 @@ import type { Store } from "./schema";
 
 export const kraft: Store = {
   name: "Restaurant Kraft",
+  slug: "restaurant-kraft",
   openingHours: [
     { day: "Mandag", closed: true },
     { day: "Tirsdag", open: "16:30", close: "23:00", closed: false },

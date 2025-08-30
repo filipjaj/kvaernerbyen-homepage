@@ -2,6 +2,7 @@ import type { Store } from "./schema";
 
 export const kiwi: Store = {
   name: "Kiwi Kværnerbyen",
+  slug: "kiwi-kvaernerbyen",
   openingHours: [
     {
       day: "Mandag",

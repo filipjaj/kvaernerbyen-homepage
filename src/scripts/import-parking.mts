@@ -32,15 +32,17 @@ function filterByBounds<T extends ItemWithCoords>(
 ): T[] {
   const { minLat, maxLat, minLon, maxLon } = bounds;
 
-  return list.filter((item) => {
-    const lat = toNum(item.breddegrad);
-    const lon = toNum(item.lengdegrad);
-    if (!Number.isFinite(lat) || !Number.isFinite(lon)) return false;
+  return list
+    .filter((item) => {
+      const lat = toNum(item.breddegrad);
+      const lon = toNum(item.lengdegrad);
+      if (!Number.isFinite(lat) || !Number.isFinite(lon)) return false;
 
-    const latOK = lat >= minLat && lat <= maxLat;
-    const lonOK = lonInRange(lon, minLon, maxLon);
-    return latOK && lonOK;
-  });
+      const latOK = lat >= minLat && lat <= maxLat;
+      const lonOK = lonInRange(lon, minLon, maxLon);
+      return latOK && lonOK;
+    })
+    .filter((item) => !item.deaktivertTidspunkt);
 }
 
 const data = await fetch(
@@ -57,6 +59,6 @@ const filtered = filterByBounds(json, {
 
 // create file based on filtered
 import fs from "fs";
-const file = "./parking.json";
+const file = "./data/parking/parking.json";
 
 fs.writeFileSync(file, JSON.stringify(filtered));

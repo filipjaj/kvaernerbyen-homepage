@@ -18,6 +18,7 @@ import type { Store } from "./schema";
 
 export const vitus: Store = {
   name: "Vitusapotek Kværnerbyen",
+  slug: "vitusapotek-kvaernerbyen",
   openingHours: [
     {
       day: "Mandag",

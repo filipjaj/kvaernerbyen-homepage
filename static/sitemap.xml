@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://kvbyen.no/</loc>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- Articles section -->
+  <url>
+    <loc>https://kvbyen.no/artikler</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Individual articles -->
+  <url>
+    <loc>https://kvbyen.no/artikler/historie</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://kvbyen.no/artikler/slik-ble-kvaernerbyen-til</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Parking section -->
+  <url>
+    <loc>https://kvbyen.no/parkering</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <!-- Individual parking locations -->
+  <url>
+    <loc>https://kvbyen.no/parkering/turbinveien-mellom-freserveien-og-smeltedigelen-106034</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kvbyen.no/parkering/smeltedigelen-mellom-freserveien-og-turbinveien-106429</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kvbyen.no/parkering/kvaernerbyen-p-hus-61568</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://kvbyen.no/parkering/turbinveien-ingeniorvn-62431</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Stores -->
+  <url>
+    <loc>https://kvbyen.no/butikker/kiwi-kvaernerbyen</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://kvbyen.no/butikker/extra-kvaernerbyen</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://kvbyen.no/butikker/vitus-apotek-kvaernerbyen</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://kvbyen.no/butikker/apent-bakeri-kvaernerbyen</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>https://kvbyen.no/butikker/restaurant-kraft</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

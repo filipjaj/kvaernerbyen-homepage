@@ -2,6 +2,7 @@ import type { Store } from "./schema";
 
 export const extra: Store = {
   name: "Coop Extra Kværnerbyen",
+  slug: "coop-extra-kvaernerbyen",
   openingHours: [
     {
       day: "Mandag",
@@ -51,13 +52,11 @@ export const extra: Store = {
     },
   ],
   address: {
-    street: "Turbinveien 4 B",
+    street: "Smeltedigelen 6",
     zip: "0195",
     city: "Oslo",
   },
   contact: {
-    phone: "22678701",
-    email: "kiwi.kvaernerbyen@kiwi.no",
-    url: "https://kiwi.no/finn-butikk/kiwi-315-kvarnerbyen",
+    phone: "66808454",
   },
 };
